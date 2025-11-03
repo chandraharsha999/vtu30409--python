@@ -1,0 +1,93 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyOW9/VoGGEYBHPgwDxOZ6en",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/chandraharsha999/vtu30409--python/blob/main/TASK7\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": 1,
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "scDhIUR_I7Ty",
+        "outputId": "08f9449b-6c96-43fc-9df0-e7eb7087a70d"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Enter marks of Subject 1: 5\n",
+            "Enter marks of Subject 2: 5\n",
+            "Enter marks of Subject 3: 4\n",
+            "\n",
+            "--- Student Result ---\n",
+            "Total Marks: 14\n",
+            "Average Marks: 4.67\n",
+            "Grade: Fail\n"
+          ]
+        }
+      ],
+      "source": [
+        "# Student Result Calculator using functions\n",
+        "\n",
+        "def get_marks():\n",
+        "    m1 = int(input(\"Enter marks of Subject 1: \"))\n",
+        "    m2 = int(input(\"Enter marks of Subject 2: \"))\n",
+        "    m3 = int(input(\"Enter marks of Subject 3: \"))\n",
+        "    return m1, m2, m3\n",
+        "\n",
+        "def calculate_total_average(m1, m2, m3):\n",
+        "    total = m1 + m2 + m3\n",
+        "    average = total / 3\n",
+        "    return total, average\n",
+        "\n",
+        "def find_grade(average):\n",
+        "    if average >= 90:\n",
+        "        return 'A'\n",
+        "    elif average >= 75:\n",
+        "        return 'B'\n",
+        "    elif average >= 50:\n",
+        "        return 'C'\n",
+        "    else:\n",
+        "        return 'Fail'\n",
+        "\n",
+        "def display_result(total, average, grade):\n",
+        "    print(\"\\n--- Student Result ---\")\n",
+        "    print(f\"Total Marks: {total}\")\n",
+        "    print(f\"Average Marks: {average:.2f}\")\n",
+        "    print(f\"Grade: {grade}\")\n",
+        "\n",
+        "# Main program\n",
+        "m1, m2, m3 = get_marks()\n",
+        "total, average = calculate_total_average(m1, m2, m3)\n",
+        "grade = find_grade(average)\n",
+        "display_result(total, average, grade)"
+      ]
+    }
+  ]
+}
